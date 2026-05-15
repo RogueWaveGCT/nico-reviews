@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: nico-reviews
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: DATABASE_PATH
+        value: /data/reviews.db
+    disk:
+      name: sqlite-data
+      mountPath: /data
+      sizeGB: 1
